@@ -1,4 +1,4 @@
-package com.whuups.mobile.chat.incomingcall;
+package com.whuups.mobile.app;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
