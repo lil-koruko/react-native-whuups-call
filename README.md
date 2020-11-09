@@ -6,8 +6,6 @@ Yes I heard you could use **self managed ConnectionService** thing. But since I'
 
 You could also wait for [this feature request](https://github.com/react-native-webrtc/react-native-callkeep/issues/43) from `react-native-callkeep` to be resolved and have an easier life.
 
-<img width="400" src="https://github.com/bkdev98/react-native-incoming-call/raw/master/incoming-call.jpg">
-
 ## Version 2 Breaking Changes
 
 Hello there! It's been a while since I first public version 1 of this library, which contains some bugs that I don't have much time to fix.
@@ -20,7 +18,7 @@ Luckily I got a client project which needs this feature again and now I have tim
 
 - [x] More flexible APIs.
 
-*Thanks to [jpudysz](https://github.com/jpudysz/react-native-callkeep)'s folk of react-native-callkeep, version 2 is heavily depended on it.*
+_Thanks to [jpudysz](https://github.com/jpudysz/react-native-callkeep)'s folk of react-native-callkeep, version 2 is heavily depended on it._
 
 ### Migrate from v1
 
@@ -84,35 +82,35 @@ useEffect(() => {
 }, []);
 ```
 
-In `index.js` or anywhere firebase background handler lies: 
+In `index.js` or anywhere firebase background handler lies:
 
 ```javascript
-import messaging from '@react-native-firebase/messaging';
-import {DeviceEventEmitter} from 'react-native';
-import IncomingCall from 'react-native-incoming-call';
+import messaging from "@react-native-firebase/messaging";
+import { DeviceEventEmitter } from "react-native";
+import IncomingCall from "react-native-incoming-call";
 
-messaging().setBackgroundMessageHandler(async remoteMessage => {
+messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   // Receive remote message
-  if (remoteMessage?.notification?.title === 'Incoming Call') {
+  if (remoteMessage?.notification?.title === "Incoming Call") {
     // Display incoming call activity.
     IncomingCall.display(
-      'callUUIDv4', // Call UUID v4
-      'Quocs', // Username
-      'https://avatars3.githubusercontent.com/u/16166195', // Avatar URL
-      'Incomming Call', // Info text
+      "callUUIDv4", // Call UUID v4
+      "Quocs", // Username
+      "https://avatars3.githubusercontent.com/u/16166195", // Avatar URL
+      "Incomming Call", // Info text
       20000 // Timeout for end call after 20s
     );
-  } else if (remoteMessage?.notification?.title === 'Missed Call') {
+  } else if (remoteMessage?.notification?.title === "Missed Call") {
     // Terminate incoming activity. Should be called when call expired.
     IncomingCall.dismiss();
   }
 
   // Listen to headless action events
-  DeviceEventEmitter.addListener("endCall", payload => {
+  DeviceEventEmitter.addListener("endCall", (payload) => {
     // End call action here
   });
   DeviceEventEmitter.addListener("answerCall", (payload) => {
-    console.log('answerCall', payload);
+    console.log("answerCall", payload);
     if (payload.isHeadless) {
       // Called from killed state
       IncomingCall.openAppFromHeadlessMode(payload.uuid);
@@ -132,10 +130,8 @@ You need to turn on autostart and display pop-up windows permissions manually. I
 
 ### No vibration when screen locked:
 
-PR is welcomed! 😂
+PR is welcomed!
 
 ## License
 
 This project is licensed under the MIT License.
-
-[khanh@quocs.com](mailto:khanh@quocs.com)
