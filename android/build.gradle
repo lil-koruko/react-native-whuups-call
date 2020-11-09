@@ -75,6 +75,7 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'  // From node_modules
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
+    //noinspection GradleCompatible
     implementation 'com.android.support:support-compat:28.0.0'
     def camerax_version = "1.0.0-beta08"
     implementation "androidx.camera:camera-core:${camerax_version}"

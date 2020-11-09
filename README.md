@@ -28,11 +28,11 @@ _Thanks to [jpudysz](https://github.com/jpudysz/react-native-callkeep)'s folk of
 
 ## Getting started
 
-`$ npm install react-native-incoming-call --save`
+`$ npm install react-native-whuups-call --save`
 
 or
 
-`$ yarn add react-native-incoming-call`
+`$ yarn add react-native-whuups-call`
 
 ### Addition installation step
 
@@ -46,7 +46,7 @@ In `AndroidManifest.xml`:
 
 For RN >= 0.60, it's done. Otherwise:
 
-`$ react-native link react-native-incoming-call`
+`$ react-native link react-native-whuups-call`
 
 ## Usage
 
