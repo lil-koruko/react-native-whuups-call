@@ -9,8 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bkdev98/react-native-incoming-call.git",
-    "baseUrl": "https://github.com/bkdev98/react-native-incoming-call"
+    "url": "git+https://github.com/lil-koruko/react-native-whuups-call.git",
+    "baseUrl": "https://github.com/lil-koruko/react-native-whuups-call"
   },
   "keywords": [
     "react-native"
