@@ -98,6 +98,7 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
       "Quocs", // Username
       "https://avatars3.githubusercontent.com/u/16166195", // Avatar URL
       "Incomming Call", // Info text
+      "voice_call", // call type could accept "voice_call" or "video_call"
       20000 // Timeout for end call after 20s
     );
   } else if (remoteMessage?.notification?.title === "Missed Call") {
