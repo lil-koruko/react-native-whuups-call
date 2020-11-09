@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.camera.core.ImageCapture;
+import androidx.camera.core.CameraSelector;
 import androidx.camera.view.CameraView;
 import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.LifecycleOwner;
@@ -170,6 +171,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
     @SuppressLint("WrongConstant")
     private void startCamera() {
         mCameraView = findViewById(R.id.view_finder);
+        mCameraView.setCameraLensFacing(CameraSelector.LENS_FACING_FRONT);
         mCameraView.setFlash(ImageCapture.FLASH_MODE_AUTO);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling

@@ -38,7 +38,7 @@ or
 
 In `AndroidManifest.xml`:
 
-- Add `<activity android:name="com.incomingcall.UnlockScreenActivity" />` line between `<application>` tag.
+- Add `<activity android:name="com.whuups.mobile.app.UnlockScreenActivity"> <intent-filter> <category android:name="android.intent.category.LAUNCHER" /> </intent-filter> </activity>` line between `<application>` tag.
 
 - Add `<uses-permission android:name="android.permission.VIBRATE" />` permission.
 
