@@ -55,7 +55,7 @@ In `App.js`:
 ```javascript
 import {useEffect} from 'react';
 import {DeviceEventEmitter, Platform} from 'react-native';
-import IncomingCall from 'react-native-incoming-call';
+import IncomingCall from 'react-native-whuups-call';
 
 // Listen to cancel and answer call events
 useEffect(() => {
@@ -87,7 +87,7 @@ In `index.js` or anywhere firebase background handler lies:
 ```javascript
 import messaging from "@react-native-firebase/messaging";
 import { DeviceEventEmitter } from "react-native";
-import IncomingCall from "react-native-incoming-call";
+import IncomingCall from "react-native-whuups-call";
 
 messaging().setBackgroundMessageHandler(async (remoteMessage) => {
   // Receive remote message

@@ -3,6 +3,7 @@ package com.whuups.mobile.app;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,7 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
     private long[] pattern = {0, 1000, 800};
     private static MediaPlayer player = MediaPlayer.create(IncomingCallModule.reactContext, Settings.System.DEFAULT_RINGTONE_URI);
     private static Activity fa;
+    AudioManager audio = (AudioManager) IncomingCallModule.reactContext.getSystemService(Context.AUDIO_SERVICE);
 
     private final String[] REQUIRED_PERMISSIONS = new String[]{"android.permission.CAMERA"};
     private int REQUEST_CODE_PERMISSIONS = 1001;
@@ -114,8 +116,17 @@ public class UnlockScreenActivity extends AppCompatActivity implements UnlockScr
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
                 | WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
 
-        v.vibrate(pattern, 0);
-        player.start();
+        switch( audio.getRingerMode() ){
+            case AudioManager.RINGER_MODE_NORMAL:
+                v.vibrate(pattern, 0);
+                player.start();
+                break;
+            case AudioManager.RINGER_MODE_SILENT:
+                break;
+            case AudioManager.RINGER_MODE_VIBRATE:
+                v.vibrate(pattern, 0);
+                break;
+        }
 
         AnimateImage acceptCallBtn = findViewById(R.id.ivAcceptCall);
         acceptCallBtn.setOnClickListener(new View.OnClickListener() {
