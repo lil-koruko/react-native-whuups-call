@@ -1,7 +1,7 @@
 {
   "name": "react-native-whuups-call",
   "title": "React Native Whuups Call",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React Native module to display incoming call activity. Only for Android since iOS we have VoIP.",
   "main": "index.js",
   "scripts": {

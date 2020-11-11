@@ -116,7 +116,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:scaleType="centerInside"
-                android:src="@drawable/ic_accept_call"
+                android:src="@drawable/ic_accept_call_audio"
             />
         </LinearLayout>
 
